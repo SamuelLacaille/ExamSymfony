@@ -47,4 +47,12 @@ class CategorieRepository extends ServiceEntityRepository
         ;
     }
     */
+
+    public function getCategorie()
+    {
+        return $this->createQueryBuilder('categorie')
+            ->select('categorie.nom')
+            ->getQuery()
+            ->getResult();
+    }
 }

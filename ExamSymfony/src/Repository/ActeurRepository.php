@@ -47,4 +47,14 @@ class ActeurRepository extends ServiceEntityRepository
         ;
     }
     */
+
+
+    public function getActeur()
+    {
+        return $this->createQueryBuilder('acteur')
+            ->select('acteur.nom', 'acteur.prenom', 'acteur.age')
+            ->getQuery()
+            ->getResult();
+    }
+
 }

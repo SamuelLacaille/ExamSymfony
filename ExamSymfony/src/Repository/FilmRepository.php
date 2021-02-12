@@ -47,4 +47,12 @@ class FilmRepository extends ServiceEntityRepository
         ;
     }
     */
+
+    public function getFilm()
+    {
+        return $this->createQueryBuilder('film')
+            ->select('film.titre','film.annee')
+            ->getQuery()
+            ->getResult();
+    }
 }
