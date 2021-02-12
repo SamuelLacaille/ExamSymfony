@@ -9,9 +9,14 @@
 </style>
 
 <div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
 
-    <h2>Titre : {{ titre }}</h2>
-    <h3>Année : {{ annee}} </h3>
+
+    {% for film in films %}
+        <h2>Film : {{ film.titre }}</h2>
+
+        <ul>
+            <li>année : {{ film.annee }}</li>
+        </ul>
+    {% endfor %}
 </div>
 {% endblock %}

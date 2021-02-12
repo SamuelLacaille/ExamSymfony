@@ -9,10 +9,15 @@
 </style>
 
 <div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+    {% for acteur in acteurs %}
+        <h2>Nom : {{ acteur.nom }}</h2>
 
-    <h2>Nom : {{ nom }}</h2>
-    <h3>Prenom : {{ prenom }}</h3>
-    <h3>Age : {{ age }} </h3>
+        <ul>
+            <li>prenom : {{ acteur.prenom }}</li>
+            <li>age : {{ acteur.age }}</li>
+        </ul>
+    {% endfor %}
+
+
 </div>
 {% endblock %}

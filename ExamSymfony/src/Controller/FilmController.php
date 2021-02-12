@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Repository\FilmRepository;
 use Doctrine\ORM\Mapping\Entity;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -10,17 +11,18 @@ use Symfony\Component\Routing\Annotation\Route;
 class FilmController extends AbstractController
 {
     /**
-     * @Route("/film", name="film")
+     * @Route("/films", name="film")
+     * @param FilmRepository $filmRepository
+     * @return Response
      */
-    public function index(): Response
+    public function getFilms(FilmRepository $filmRepository): Response
     {
-        $annee = 2010;
-        $titre = "Expendables";
+
+        $films = $filmRepository->findAll();
 
         return $this->render('film/index.html.twig', [
-            'controller_name' => 'FilmController',
-            'annee' => $annee,
-            'titre' => $titre
+            'films' => $films
         ]);
     }
+
 }
