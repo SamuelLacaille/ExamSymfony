@@ -107,6 +107,8 @@
       <excludeFolder url="file://$MODULE_DIR$/ExamSymfony/vendor/phpdocumentor/type-resolver" />
       <excludeFolder url="file://$MODULE_DIR$/ExamSymfony/vendor/phpdocumentor/reflection-docblock" />
       <excludeFolder url="file://$MODULE_DIR$/ExamSymfony/vendor/composer" />
+      <excludeFolder url="file://$MODULE_DIR$/ExamSymfony/vendor/doctrine/doctrine-fixtures-bundle" />
+      <excludeFolder url="file://$MODULE_DIR$/ExamSymfony/vendor/doctrine/data-fixtures" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
