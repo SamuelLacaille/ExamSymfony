@@ -13,8 +13,17 @@ class ActeurController extends AbstractController
      */
     public function index(): Response
     {
+        $nom = "Johnson";
+        $prenom = "Dwayne";
+        $age = 48;
+
+
+
         return $this->render('acteur/index.html.twig', [
             'controller_name' => 'ActeurController',
+            'nom' => $nom,
+            'prenom' => $prenom,
+            'age' => $age
         ]);
     }
 }

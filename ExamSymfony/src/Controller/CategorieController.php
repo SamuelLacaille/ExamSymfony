@@ -13,8 +13,11 @@ class CategorieController extends AbstractController
      */
     public function index(): Response
     {
+        $nom = "action";
+
         return $this->render('categorie/index.html.twig', [
             'controller_name' => 'CategorieController',
+            'nom' => $nom
         ]);
     }
 }

@@ -20,21 +20,21 @@ class Categorie
     /**
      * @ORM\Column(type="ascii_string", nullable=true)
      */
-    private $type;
+    private $nom;
 
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getType()
+    public function getNom()
     {
-        return $this->type;
+        return $this->nom;
     }
 
-    public function setType($type): self
+    public function setNom($nom): self
     {
-        $this->type = $type;
+        $this->nom = $nom;
 
         return $this;
     }
