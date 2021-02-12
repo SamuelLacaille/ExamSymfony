@@ -103,5 +103,27 @@ class CategorieController extends AbstractController
 
     }
 
+    /**
+     * @Route("/categorie/supprimer/{id}", name="categorie_supprimer", methods={"DELETE"})
+     * @param CategorieRepository $categorieRepository
+     * @param int $id
+     * @return Response
+     */
+    public function deleteCategorie(CategorieRepository $categorieRepository, $id = 0): Response
+    {
+        $categorie = $categorieRepository->find($id);
+
+
+        if ($categorie) {
+
+            $this->em->remove($categorie);
+            $this->em->flush();
+
+            return new JsonResponse("categorie supprimee", Response::HTTP_OK);
+        } else {
+            return new JsonResponse("Rien a supprimer", Response::HTTP_BAD_REQUEST);
+        }
+    }
+
 
 }

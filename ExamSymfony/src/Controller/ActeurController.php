@@ -98,7 +98,27 @@ class ActeurController extends AbstractController
 
     }
 
+    /**
+     * @Route("/acteur/supprimer/{id}", name="acteur_supprimer", methods={"DELETE"})
+     * @param ActeurRepository $acteurRepository
+     * @param int $id
+     * @return Response
+     */
+    public function deleteActeur(ActeurRepository $acteurRepository, $id = 0): Response
+    {
+        $acteur = $acteurRepository->find($id);
 
+
+        if ($acteur) {
+
+            $this->em->remove($acteur);
+            $this->em->flush();
+
+            return new JsonResponse("acteur supprime", Response::HTTP_OK);
+        } else {
+            return new JsonResponse("Rien a supprimer", Response::HTTP_BAD_REQUEST);
+        }
+    }
 
 
 

@@ -104,4 +104,27 @@ class FilmController extends AbstractController
     }
 
 
+    /**
+     * @Route("/film/supprimer/{id}", name="film_supprimer", methods={"DELETE"})
+     * @param FilmRepository $filmRepository
+     * @param int $id
+     * @return Response
+     */
+    public function deleteEcole(FilmRepository $filmRepository, $id = 0): Response
+    {
+        $film = $filmRepository->find($id);
+
+
+        if ($film) {
+
+            $this->em->remove($film);
+            $this->em->flush();
+
+            return new JsonResponse("film supprime", Response::HTTP_OK);
+        } else {
+            return new JsonResponse("Rien a supprimer", Response::HTTP_BAD_REQUEST);
+        }
+    }
+
+
 }
