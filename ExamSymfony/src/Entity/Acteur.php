@@ -14,6 +14,7 @@ class Acteur
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
+     * @ORM\OneToMany(targetEntity="App\Entity\Film", mappedBy="acteur")
      */
     private $id;
 
